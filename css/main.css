@@ -208,11 +208,9 @@ Slider*
     margin: auto;
     top: 215px;
     transform: translateY(-50%);
-/*    overflow: hidden;*/
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-/*    align-items: center;*/
 }
 
 #carousel div {
@@ -226,7 +224,7 @@ Slider*
     transition: width 1s;
     border-radius: 6px;
     box-shadow: 0 2px 6px rgba(0, 0, 1, 0.35), 0 0 20px rgba(0, 0, 0, 0.23);
-    border: 1px solid rgba(0, 0, 0, 0);
+    border: 1px solid;
 }
 
 #carousel div.hideLeft {
@@ -283,6 +281,24 @@ Slider*
     left: 50%;
     transform: translateY(0px) translateX(-50%); 
 }
+#carousel div.selected::after  {
+    content: "";
+    width: 138px;
+    height: 362px;
+    background-image: url(../img/Header/iPhone-screen.png);
+    position: absolute;
+    top: 72px;
+    right: -58px;
+    box-shadow: -50px 6px 32px -20px rgba(0,0,0,0.76),
+                0px 36px 37px -20px rgba(0,0,0,1);
+}
+#carousel div.prevLeftSecond ~ div.selected::after {
+    display: none;
+}
+#carousel #prev__screen::after {
+    display: none;
+}
+
 
 #carousel div.next {
   z-index: 5;
@@ -1046,9 +1062,9 @@ footer {
 }
 
 .footer__bottom {
-    height: 299px;
+    height: 250px;
     box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.25);
-    background-image: url(../img/bg/bg-map.jpeg);
+    background-image: url(../img/Footer/google_maps_bg.jpg);
     
 }
 .contactus{
@@ -1061,11 +1077,28 @@ footer {
     font-weight: 400;
     letter-spacing: 0.6px;
     margin: auto;
-    vertical-align: middle;
+    position: relative;
+    top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.contactus::after{
+    content: "";
+    position: absolute;
+    /* Style for "Rounded Re" */
+    width: 14px;
+    height: 8px;
+    background-image: url(../img/Footer/Rectangle.png);
+    top: 150px;
+    right: 301px;
+        
 }
 .contactus > span {
     color: #ffffff;
     font-size: 30px;
+    display: inline-block;
 }
     
 
